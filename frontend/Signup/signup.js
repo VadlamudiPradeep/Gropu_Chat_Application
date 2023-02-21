@@ -1,6 +1,5 @@
-
 async function signup(e){
-  try{
+try{
       e.preventDefault();
   
       let signupDetails ={
@@ -9,30 +8,33 @@ async function signup(e){
           phone:e.target.phone.value,
           password:e.target.password.value
       };
-    if(signupDetails.name.length < 4 || signupDetails.name === ''){
+    if(signupDetails.name.length < 6 || signupDetails.name === ''){
       alert('Enter a valid name');
       return ;
-    }else if(signupDetails.email === ''){
+    }else if(signupDetails.email.indexOf('@')==-1){
       alert('Enter a valid email');
       return ;
     }else if(signupDetails.phone.length < 10 || signupDetails.password.length < 8){
-      alert('Enter a valid email');
+      alert('Enter a valid phone number or password ');
       return ;
     }
 
       
-   let response  = await axios.post('http://localhost:3000/user/signup', signupDetails)
-     if(response.data[1] === false){
-      alert('This email address in use please login....')
-     }else if(response.status === 201){
-      window.location.href = '../Login/login.html';
+   await axios.post('http://localhost:3000/user/signup', signupDetails)
+   .then(response =>{
+       if(response.status ===201 ){
+        alert("You already have an account with us! Please Login...")
      }else{
-      throw new ErrorEvent('Failed to login')
-     }
-      
+      alert("Sign Up Successful!")
+  }
+   })
+   .catch(err=>{
+    throw new Error(err)
+   })
   }
 catch(err){
-     document.body.innerHTML += `<h3 style="color:black">${err}</h3>`
+  alert("You already have an account with us! Please Login...")
 }
+  }
 
-}
+
