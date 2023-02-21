@@ -1,31 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Expense Tracker</title>
-  <link rel="stylesheet" href="./signup.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Building a Group Chat App</title>
+    <link rel="stylesheet" href="./signup.css">
 </head>
 <body>
-  
-<div class="main">
-	<div class="signup">
-		<form>
-			<label for="check">Sign up</label>
-			<input type="text" id="name" name="name" placeholder="Name" required="">
-			<input type="email" id="email" name="email" placeholder="Email" required="">
-			<input type="text" id="phone" name="phone" placeholder="Phone Number" required="">
-			<input type="password" id="passwor" name="password" placeholder="Password" required="">
-			<button id="sign-up-btn">Sign up</button>
-			<a id="login_Btn" href="../Login/login.html"><p>Existing User - Login</p></a>
-		</form>
+	<div class="main">  	
+		<input type="checkbox" id="chk" aria-hidden="true">
+
+			<div class="signup">
+				<form action="#" onsubmit="signup(event)">
+					<label for="chk" aria-hidden="true">Sign up</label>
+					<input type="text" id="name" name="name" placeholder="Name" required="">
+					<input type="email" id="email" name="email" placeholder="Email" required="">
+					<input type="text" id="phone" name="phone" placeholder="Phone Number" required="">
+					<input type="password" id="password-up" name="password" placeholder="Password" required="">
+					<button id="sign-up-btn">Sign up</button>
+				</form>
+			</div>
 	</div>
 	
-</div>
-
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
-<script src="./signup.js"></script>
+	<!-- axios - for network call --> 
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+	<script src="./signup.js"></script>
 </body>
 </html>

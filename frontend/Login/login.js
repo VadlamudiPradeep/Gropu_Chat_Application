@@ -14,12 +14,12 @@ async function signIn(e){
       alert('Enter A strong password')
      };
   
-  let response = await axios.post('http://localhost:3000/user/signIn', loginDetails);
-          alert(response.data.message);
-         
-    }
+ await axios.post('http://localhost:3000/user/Login', loginDetails).then(response =>{
+  localStorage.setItem('token' ,response.data.token)
+ })
+   }
     catch(err){
-      document.body.innerHTML += `<div style="color:black">${err.message}<div>`;
+      document.body.innerHTML += `<h3 style='color:solid black'>${err}</h3>`
     }
   };
   
