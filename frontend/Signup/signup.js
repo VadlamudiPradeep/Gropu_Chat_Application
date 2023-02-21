@@ -22,18 +22,19 @@ async function signup(e){
         
      await axios.post('http://localhost:3000/user/signup', signupDetails)
      .then(response =>{
-         if(response.status ===201 ){
-      window.location.href='../Login/login.html';
-       }else{
-        alert("Sign Up Successful!")
-    }
+      if(response.status === 404){
+        alert('user already exits please login ')
+       }else if(response.status === 201){
+        window.location.href = '../Login/login.html';
+       }
      })
      .catch(err=>{
       throw new Error(err)
      })
     }
   catch(err){
-    alert("You already have an account with us! Please Login...")
+    document.body.innerHTML += `<h4 style="color:black">${err}</h4>`
   }
     }
+  
   
