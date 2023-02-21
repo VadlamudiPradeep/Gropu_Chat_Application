@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Building a Group Chat App</title>
+    <link rel="stylesheet" href="./login.css">
+</head>
+<body>
+<div class="main">
+		<input type="checkbox" id="check" aria-hidden="true">
+
+			<div class="login">
+				<form action="#" onsubmit="signIn(event)">
+					<label for="check" aria-hidden="true">Login</label>
+					<input type="email" id="email" name="email" placeholder="Email" required="">
+					<input type="password" id="password" name="password" placeholder="Password" required="">
+					<button id="sign-in-btn">Login</button>
+					<a id="sign_Btn" href="../Signup/signup.html"><p> New User</p></a>
+				</form>
+			</div>
+			</div>
+	
+	<!-- axios - for network call --> 
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+    <script src="./login.js"></script>
+</body>
+</html>

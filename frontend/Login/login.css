@@ -6,28 +6,23 @@ body{
 	align-items: center;
 	min-height: 100vh;
 	font-family: 'Jost', sans-serif;
-	background: linear-gradient(to bottom, #19134f, #1d129a, #2e2e5d);
+	background: linear-gradient(to top, #57a50d, #0977d2, #b10a3f);
 }
 .main{
 	width: 350px;
 	height: 500px;
+	align-items: center;
 	background: red;
-	overflow: hidden;
-	background: linear-gradient(to bottom, #21167f, #d64b0b, #e0052d);
+	background: linear-gradient(to bottom, #1606ac, #f40707bb, rgb(47, 237, 18));
 	border-radius: 10px;
-	box-shadow: 5px 20px 50px #049df6c8;
+	box-shadow: 5px 20px 50px #da0f34;
 }
 #check{
 	display: none;
 }
-.signup{
-	position: relative;
-	width:100%;
-	height: 100%;
-	box-shadow: 5px 20px 50px #f63804c8;
-}
+
 label{
-	color: #fff;
+	color: #dc10218d;
 	font-size: 2.3em;
 	justify-content: center;
 	display: flex;
@@ -54,8 +49,8 @@ button{
 	margin: 10px auto;
 	justify-content: center;
 	display: block;
-	color: #fff;
-	background: #573b8a;
+	color: #b9a5a5;
+	background: #eb3e04;
 	font-size: 1em;
 	font-weight: bold;
 	margin-top: 20px;
@@ -66,9 +61,27 @@ button{
 	cursor: pointer;
 }
 button:hover{
-	background: #6d44b8;
+	background: #de0910ab;
 }
-#login_Btn{
+.login{
+	height: 460px;
+	background: #eee;
+	border-radius: 60% / 10%;
+	transform: translateY(-180px);
+	transition: .8s ease-in-out;
+}
+.login label{
+	color: #090fcb;
+	transform: scale(.6);
+}
+
+#check:checked ~ .login{
+	transform: translateY(-500px);
+}
+#check:checked ~ .login label{
+	transform: scale(1);	
+}
+#sign_Btn{
 	text-align: center;
 	width: 60%;
 	height: 40px;
@@ -86,9 +99,3 @@ button:hover{
 	transition: .2s ease-in;
 	cursor: pointer;
 }
-
-
-#check:checked ~ .signup label{
-	transform: scale(.6);
-}
-	
