@@ -8,19 +8,21 @@ const app = express();
 const cors = require('cors');
 app.use(cors());
 
-app.use(bodyParser.urlencoded({extended:false}));
+//app.use(bodyParser.urlencoded({extended:false}));
 app.use(bodyParser.json());
 
 // routes folders
-const SignupRoutes = require('./routes/signupRoutes');
+const userRoutes = require('./routes/user');
+const chatRoutes = require('./routes/chats');
 
 
-app.use('/user',SignupRoutes);
+app.use('/user',userRoutes);
+app.use('/chat',chatRoutes);
 
 
 sequelize
-//.sync({force:true})
-.sync()
+ .sync({force:true})
+ //.sync()
 .then(response =>{
     app.listen(3000,()=>{
         console.log('Port is  running on 3000')

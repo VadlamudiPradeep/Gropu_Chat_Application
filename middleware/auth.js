@@ -1,13 +1,13 @@
-let jwt = require('jsonwebtoken');
+const jwt = require('jsonwebtoken');
+const User = require('../models/user');
 
-let User = require('../models/users');
-
-let authenticate = async (req, res, next) => {
+const authenticate = (req, res, next) => {
 
     try {
         const token = req.header('Authorization');
-        console.log(token);
-        const user = jwt.verify(token,'secretkey');
+        console.log('token:' + token);
+        const user = jwt.verify(token,process.env.TOKEN_SECRET);
+        console.log('middleware user :' +user)
         console.log('userID >>>> ', user.userId)
         User.findByPk(user.userId).then(user => {
 
@@ -20,6 +20,9 @@ let authenticate = async (req, res, next) => {
         return res.status(401).json({success: false})
         // err
       }
-    };
 
-    module.exports = authenticate ;
+}
+
+module.exports = {
+    authenticate
+}

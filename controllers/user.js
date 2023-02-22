@@ -1,4 +1,4 @@
-const User  = require('../models/users');
+const User  = require('../models/user');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken')
 const salt = bcrypt.genSalt(10);
@@ -71,4 +71,5 @@ const Login = async(req,res)=>{
 module.exports = {
     Signup,
     Login,
+    GenerateAccessToken
 }

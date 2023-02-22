@@ -1,21 +1,19 @@
-const form = document.querySelector('form');
-const input = document.querySelector('input');
-const ul = document.querySelector('ul');
 
-form.addEventListener('submit', (e) => {
+var token = sessionStorage.getItem('token')
+function sendMessages (e){
   e.preventDefault();
+let chats  = {
+  message:e.target.message.value 
+}
 
-  // Get the input value
-  const inputValue = input.value;
+  // Send a POST request to the backend to add the message to the database
+  axios.post('http://localhost:3000/chat/messages',chats ,{headers:{'Authorization':token}})
+  .then((response) => {
+    console.log(response.data);
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 
-  // Create a new list item and add it to the list
-  const li = document.createElement('li');
-  li.textContent = inputValue;
-  ul.appendChild(li);
 
-  // Clear the input
-  input.value = '';
-
-  // Scroll to the bottom of the chatbox
-  ul.scrollTop = ul.scrollHeight;
-});
+};
