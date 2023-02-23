@@ -28,7 +28,7 @@ chatModels.belongsTo(userModels);
 
 
 sequelize
-//.sync({force:true})
+// .sync({force:true})
  .sync()
 .then(response =>{
     app.listen(3000,()=>{

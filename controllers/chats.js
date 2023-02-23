@@ -26,8 +26,8 @@ const postChat  =async (req,res)=>{
    const getChats =(req, res, next)=>{
     console.log(req.query)
   
-        Chats.findAll().then(message=>{
-            res.status(200).json({message:message , success:true})
+        Chats.findAll().then(messages=>{
+            res.status(200).json({messages:messages ,message:'successfully fetched from the database' ,success:true})
         }).catch(err=>console.log(err))
     }
     
