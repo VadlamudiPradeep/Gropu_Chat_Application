@@ -20,9 +20,16 @@ app.use('/user',userRoutes);
 app.use('/chat',chatRoutes);
 
 
+const userModels = require('./models/user');
+const chatModels = require('./models/chats');
+
+userModels.hasMany(chatModels);
+chatModels.belongsTo(userModels);
+
+
 sequelize
- .sync({force:true})
- //.sync()
+//.sync({force:true})
+ .sync()
 .then(response =>{
     app.listen(3000,()=>{
         console.log('Port is  running on 3000')
