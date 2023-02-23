@@ -1,19 +1,11 @@
-body{
-	/* margin: 0;
-	padding: 0;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	font-family: 'Jost', sans-serif;
-	background: linear-gradient(to top,white, white); */
-  margin: 0;
+  body{
 	padding: 0;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	min-height: 50vh;
 	font-family: 'Jost', sans-serif;
-	background: linear-gradient(to top, #57a50d, #0977d2, #b10a3f);
+	background: white
 }
 .main{
   height:200px;
@@ -21,8 +13,8 @@ body{
   bottom:100px;
   top:20%;
 	align-items: center;
-	background: red;
-	background: linear-gradient(to bottom, #1606ac, #f40707bb, rgb(47, 237, 18));
+	background: white;
+	
 	border-radius: 10px;
 	box-shadow: 5px 20px 50px #da0f34;
 }
@@ -35,12 +27,12 @@ body{
     align-items: center;
     border: 1px solid #ccc;
     border-radius: 10px;
-    box-shadow: 0 0 5px #f50111;
+  
   }
   
   .chatbox-header {
     background-color: #f1f1f1;
-    border-bottom: 1px solid #ccc;
+   
     padding: 10px;
     text-align: center;
   }
@@ -86,4 +78,5 @@ body{
 	color: #fff;
 	cursor: pointer;
   }
-   
+    
+ 
