@@ -53,7 +53,7 @@ const Login = async(req,res)=>{
                         throw new Error('Something went wrong');
                     }
                     if(result === true){
-                        return res.status(200).json({success:true , message:'user logged successfully' ,token :GenerateAccessToken(user[0].id)});
+                        return res.status(200).json({success:true , message:'user logged successfully',response ,token :GenerateAccessToken(user[0].id)});
                     }else{
                         return res.status(401).json({success:false , message:"user not Authorized "});
                     }
@@ -67,7 +67,6 @@ const Login = async(req,res)=>{
        return res.status(500).json({message:err , success:false});
     }
 }
-
 module.exports = {
     Signup,
     Login,

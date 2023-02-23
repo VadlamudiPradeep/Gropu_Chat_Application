@@ -28,6 +28,7 @@ function signIn(e){
       axios.post('http://localhost:3000/user/Login',creds ).then(response=>{
         alert(response.data.message);
         localStorage.setItem('token' ,response.data.token);
+      
               if (response.data.code==2){
                   alert("You have entered an Invalid Password!")
               }else if(response.data.code==0){
